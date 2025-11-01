@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.Sobre"
+             Title="Sobre">
+    <VerticalStackLayout Padding="20" VerticalOptions="Center">
+        <Label Text="Aplicativo de Hospedagem"
+               FontSize="28"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource Primary}" />
+
+        <Label Text="Desenvolvido por: Douglas Francisco Pires"
+               FontSize="18"
+               HorizontalOptions="Center"
+               Margin="0,20,0,0"/>
+
+        <Label Text="Ano de desenvolvimento: 2025"
+               FontSize="18"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Versão: 1.0"
+               FontSize="16"
+               HorizontalOptions="Center"
+               Margin="20"/>
+
+        <Button Text="Voltar"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"
+                CornerRadius="10"
+                Clicked="OnVoltarClicked"
+                Margin="0,31,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>
