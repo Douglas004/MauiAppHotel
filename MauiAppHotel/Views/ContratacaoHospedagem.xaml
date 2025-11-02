@@ -4,7 +4,7 @@
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="{StaticResource Gray100}">
+             BackgroundColor="{StaticResource Background}">
     
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
                          Padding="10">
@@ -12,14 +12,18 @@
             Text="Calculo da Diária"
             FontFamily="ComicRelief"
             FontSize="40"
-            TextColor="{StaticResource Primary}"/>
+            TextColor="{StaticResource Primary}"
+            HorizontalOptions="Center"/>
 
-        <Frame Padding="10">
+        <Frame Padding="10" 
+               BackgroundColor="{StaticResource Background}"
+               BorderColor="{StaticResource Accent}">
             <VerticalStackLayout>
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
 
                     <Label Grid.Row="0" Grid.Column="0"
+                           TextColor="{StaticResource SecondaryDarkText}"
                            Text="Adultos:" />
 
                     <Label Grid.Row="0" Grid.Column="1"
@@ -35,6 +39,7 @@
                              Increment="1"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
+                           TextColor="{StaticResource SecondaryDarkText}"
                         Text="Crianças:" />
 
                     <Label Grid.Row="1" Grid.Column="1"
@@ -50,44 +55,59 @@
                              Increment="1"/>
                 </Grid>
 
-                <Label Text="Escolha sua Suíte"/>
+                <Label Text="Escolha sua Suíte"
+                       TextColor="{StaticResource SecondaryDarkText}"/>
 
                 <Picker x:Name="pck_quarto"
+                        TextColor="{StaticResource SecondaryDarkText}"
                         Title="Selecione sua Acomodação" 
                         ItemDisplayBinding="{Binding Descricao}"/>
+                <!-- Botão Ver fotos dos quartos -->
+                <Button Text="Ver fotos dos quartos"
+                        BackgroundColor="{StaticResource Tertiary}"
+                        TextColor="White"
+                        HorizontalOptions="Center"
+                        CornerRadius="20"
+                        Clicked="BtnFotos_Clicked"
+                        Margin="0,15,0,0" />
 
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="10"
+                       BackgroundColor="{StaticResource Background}"
+                       BorderColor="{StaticResource Accent}">
                     <VerticalStackLayout>
-                        <Label Text="Período da Estadia"/>
+                        <Label Text="Período da Estadia"
+                               TextColor="{StaticResource SecondaryDarkText}"/>
                         <HorizontalStackLayout>
-                            <Label Text="Check-in:" />
+                            <Label Text="Check-in:" 
+                                   TextColor="{StaticResource SecondaryDarkText}"/>
                             <DatePicker x:Name="dtpck_checkin"
                                         DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
-                            <Label Text="Check-out:" />
+                            <Label Text="Check-out:" 
+                                   TextColor="{StaticResource SecondaryDarkText}"/>
                             <DatePicker x:Name="dtpck_checkout"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Frame>
 
-
+                <!-- Botão Avançar -->
                 <Button Text="Avançar"
                         Clicked="Button_Clicked"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White"/>
-                        
 
+                <!-- Botão Sobre -->
                 <Button Text="Sobre"
+                        Clicked="OnSobreClicked"
                         BackgroundColor="{StaticResource Tertiary}"
                         TextColor="White"
-                        CornerRadius="10"
-                        Margin="40"
-                        Clicked="OnSobreClicked"/>
+                        HorizontalOptions="End"
+                        Margin="10"/>
             </VerticalStackLayout>
         </Frame>
                

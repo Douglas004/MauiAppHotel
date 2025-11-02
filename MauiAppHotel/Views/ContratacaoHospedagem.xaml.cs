@@ -24,6 +24,11 @@ namespace MauiAppHotel.Views
         {
             await Navigation.PushAsync(new Sobre());
         }
+        private async void BtnFotos_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.FotosQuartos());
+        }
+
 
         private void Button_Clicked(object sender, EventArgs e)
         {

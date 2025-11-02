@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.FotosQuartos"
+             Title="Fotos dos Quartos">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Label Text="Modelos de Quartos"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#2E86DE"
+                   HorizontalOptions="Center" />
+
+            <!-- Quarto Super Luxo -->
+            <Frame HasShadow="True" CornerRadius="15" Padding="0">
+                <Image Source="suite_super_luxo.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="180" />
+            </Frame>
+            <Label Text="Suíte Super Luxo"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Quarto Luxo -->
+            <Frame HasShadow="True" CornerRadius="15" Padding="0">
+                <Image Source="suite_luxo.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="180" />
+            </Frame>
+            <Label Text="Suíte Luxo"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Quarto Single -->
+            <Frame HasShadow="True" CornerRadius="15" Padding="0">
+                <Image Source="suite_single.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="180" />
+            </Frame>
+            <Label Text="Suíte Single"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Quarto Crise -->
+            <Frame HasShadow="True" CornerRadius="15" Padding="0">
+                <Image Source="suite_crise.jpg"
+                       Aspect="AspectFill"
+                       HeightRequest="180" />
+            </Frame>
+            <Label Text="Suíte Crise"
+                   FontSize="16"
+                   HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
