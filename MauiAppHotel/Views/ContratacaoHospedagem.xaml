@@ -7,11 +7,14 @@
              BackgroundColor="{StaticResource Background}">
     
     <VerticalStackLayout VerticalOptions="CenterAndExpand"
-                         Padding="10">
+                         Padding="10"
+                         Spacing="10">
+        
+        <!-- Calculo da Diaria -->
         <Label 
             Text="Calculo da Diária"
             FontFamily="ComicRelief"
-            FontSize="40"
+            FontSize="30"
             TextColor="{StaticResource Primary}"
             HorizontalOptions="Center"/>
 
@@ -40,7 +43,7 @@
 
                     <Label Grid.Row="1" Grid.Column="0"
                            TextColor="{StaticResource SecondaryDarkText}"
-                        Text="Crianças:" />
+                            Text="Crianças:" />
 
                     <Label Grid.Row="1" Grid.Column="1"
                             TextColor="{StaticResource Primary}"
@@ -55,30 +58,48 @@
                              Increment="1"/>
                 </Grid>
 
-                <Label Text="Escolha sua Suíte"
-                       TextColor="{StaticResource SecondaryDarkText}"/>
+                <!--Escolha sua Suíte  -->
+                <Frame Padding="10" Margin="10" 
+                       BackgroundColor="{StaticResource Background}"
+                       BorderColor="{StaticResource Accent}">
+                    <VerticalStackLayout>
+                        <Label Text="Escolha sua Suíte"
+                               TextTransform="Uppercase"
+                               FontFamily="ComicRelief"
+                               FontSize="Micro"
+                               TextColor="{StaticResource Primary}"/>
 
-                <Picker x:Name="pck_quarto"
-                        TextColor="{StaticResource SecondaryDarkText}"
-                        Title="Selecione sua Acomodação" 
-                        ItemDisplayBinding="{Binding Descricao}"/>
+                        <Picker x:Name="pck_quarto"
+                                TextColor="{StaticResource SecondaryDarkText}"
+                                Title="Selecione sua Acomodação" 
+                                ItemDisplayBinding="{Binding Descricao}"/>
+
+                        <Button Text="Ver fotos dos quartos"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                Clicked="BtnFotos_Clicked"
+                                Margin="0,15,0,0" />
+                    </VerticalStackLayout>
+                </Frame>
+                
                 <!-- Botão Ver fotos dos quartos -->
-                <Button Text="Ver fotos dos quartos"
-                        BackgroundColor="{StaticResource Tertiary}"
-                        TextColor="White"
-                        HorizontalOptions="Center"
-                        CornerRadius="20"
-                        Clicked="BtnFotos_Clicked"
-                        Margin="0,15,0,0" />
+                
 
                 <Frame Padding="10"
                        Margin="10"
                        BackgroundColor="{StaticResource Background}"
                        BorderColor="{StaticResource Accent}">
-                    <VerticalStackLayout>
+
+                    <!--Período da Estadia  -->
+                    <VerticalStackLayout Spacing="10">
                         <Label Text="Período da Estadia"
-                               TextColor="{StaticResource SecondaryDarkText}"/>
-                        <HorizontalStackLayout>
+                               TextTransform="Uppercase"
+                               FontFamily="ComicRelief"
+                               FontSize="Micro"
+                               TextColor="{StaticResource Primary}"/>
+
+                        <!--Check-In  -->
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" 
                                    TextColor="{StaticResource SecondaryDarkText}"/>
                             <DatePicker x:Name="dtpck_checkin"
@@ -86,31 +107,33 @@
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
+                        <!--Check-Out  -->
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-out:" 
                                    TextColor="{StaticResource SecondaryDarkText}"/>
                             <DatePicker x:Name="dtpck_checkout"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
+                        
                     </VerticalStackLayout>
                 </Frame>
 
                 <!-- Botão Avançar -->
                 <Button Text="Avançar"
                         Clicked="Button_Clicked"
+                        HorizontalOptions="Center"
                         BackgroundColor="{StaticResource Primary}"
-                        TextColor="White"/>
-
-                <!-- Botão Sobre -->
-                <Button Text="Sobre"
-                        Clicked="OnSobreClicked"
-                        BackgroundColor="{StaticResource Tertiary}"
-                        TextColor="White"
-                        HorizontalOptions="End"
-                        Margin="10"/>
+                        TextColor="White"/>               
             </VerticalStackLayout>
         </Frame>
-               
-        
+        <!-- Botão Sobre -->
+        <Button Text="Sobre"
+         Clicked="OnSobreClicked"
+         BackgroundColor="{StaticResource Tertiary}"
+         TextColor="White"
+         HorizontalOptions="End"
+         Margin="10"/>
+
+
     </VerticalStackLayout>
 </ContentPage>
